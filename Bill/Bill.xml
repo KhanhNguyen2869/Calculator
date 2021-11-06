@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bills
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Bill.xsd">
+    <Bill BillId="B123">
+        <DateCreate>2021-10-10</DateCreate>
+        <IdProduct>P123</IdProduct>
+        <IdUser>A122</IdUser>
+    </Bill>
+</Bills>

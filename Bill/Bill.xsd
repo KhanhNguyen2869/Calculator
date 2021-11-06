@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="stringType">
+    <xs:restriction base="xs:string" />
+</xs:simpleType>
+<xs:simpleType name="intType">
+  <xs:restriction base="xs:nonNegativeInteger"/>
+</xs:simpleType>
+<xs:simpleType name="DateType">
+  <xs:restriction base="xs:date"/>
+</xs:simpleType>
+<xs:simpleType name="IdType">
+    <xs:restriction base="xs:ID">
+        <xs:pattern value="B[0-9]{3}"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="IdTypeUser">
+    <xs:restriction base="xs:ID">
+        <xs:pattern value="A[0-9]{3}"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="IdTypeProduct">
+    <xs:restriction base="xs:ID">
+        <xs:pattern value="P[0-9]{3}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:attribute name="BillId" type="IdType"/>
+<xs:element name="DateCreate" type="DateType"/>
+<xs:element name="IdProduct" type="IdTypeProduct"/>
+<xs:element name="IdUser" type="IdTypeUser"/>
+
+<xs:element name="Bill">
+<xs:complexType>
+    <xs:sequence>
+        <xs:element ref="DateCreate"/>
+        <xs:element ref="IdProduct"/>
+        <xs:element ref="IdUser"/>
+    </xs:sequence>
+    <xs:attribute ref="BillId" use="required" />
+</xs:complexType>
+</xs:element>
+
+    <xs:element name="Bills">
+        <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="Bill" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+    </xs:element>
+</xs:schema>

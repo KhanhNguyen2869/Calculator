@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="stringType">
+    <xs:restriction base="xs:string" />
+</xs:simpleType>
+<xs:simpleType name="intType">
+  <xs:restriction base="xs:nonNegativeInteger"/>
+</xs:simpleType>
+<xs:simpleType name="IdType">
+    <xs:restriction base="xs:ID">
+        <xs:pattern value="P[0-9]{3}"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="Brand">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Vin"/>
+        <xs:enumeration value="Mercedes"/>
+        <xs:enumeration value="Toyota"/>
+        <xs:enumeration value="Huyndai"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:attribute name="ProductId" type="IdType"/>
+<xs:element name="Productname" type="stringType"/>
+<xs:element name="Brand" type="Brand"/>
+<xs:element name="Price" type="intType"/>
+<xs:element name="Color" type="stringType"/>
+<xs:element name="TypeProduct" type="stringType"/>
+<xs:element name="Quantity" type="intType"/>
+
+<xs:element name="Product">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="Productname"/>
+            <xs:element ref="Brand"/>
+            <xs:element ref="Price"/>
+            <xs:element ref="Color"/>
+            <xs:element ref="TypeProduct"/>
+            <xs:element ref="Quantity"/>
+        </xs:sequence>
+        <xs:attribute ref="ProductId" use="required" />
+    </xs:complexType>
+</xs:element>
+
+    <xs:element name="Products">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Product" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Product.xsd">
+    <Product ProductId="P123">
+        <Productname>djdd</Productname>
+        <Brand>Mercedes</Brand>
+        <Price>1000</Price>
+        <Color>Xanh</Color>
+        <TypeProduct>222</TypeProduct>
+        <Quantity>222</Quantity>
+    </Product>
+
+    <Product ProductId="P125">
+        <Productname>djdd</Productname>
+        <Brand>Mercedes</Brand>
+        <Price>1000</Price>
+        <Color>Xanh</Color>
+        <TypeProduct>222</TypeProduct>
+        <Quantity>222</Quantity>
+    </Product>
+</Products>
